@@ -1,0 +1,27 @@
+<form (ngSublime)="onSublime" #testForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #spy #name="ngModel">
+    <!-- 这里#name设置为ngmodel  指令的exportAs属性告诉angular如何链接模板引用变量到指令
+  这里是把exportAs属性设置为ngModel -->
+    {{model.name}}
+    <!-- 该处用于界面内错误信息的认证 -->
+    <p [hidden]="name.valid || name.pristine">姓名不能为空</p>
+  </div>
+  <div class="form-group">
+    <label for="alterEgo">Alter Ego</label>
+    <input type="text" name="alterEgo" id="alterEgo" [(ngModel)]="model.alertEgo" class="form-control"> {{model.alertEgo}}
+  </div>
+  <div class="form-group">
+    <label for="power">Power</label>
+    <select class="form-control" id="power" name="power" [(ngModel)]="model.power" required>
+      <option *ngFor="let item of powerList" [value]="item">{{item}}</option>
+    </select>
+    {{model.power}}
+  </div>
+  <div class="form-group">
+    <!-- 该处通过表单的验证来判断提交按钮的现实隐藏 -->
+    表单是否可以提交{{testForm.form.valid}}
+    <button type="submit" [disabled]="!testForm.form.valid">Submit</button>
+  </div>
+</form>
