@@ -3,6 +3,7 @@ import {RouterModule,Routes} from '@angular/router';
 
 import {Search} from './compontents/search/index';
 import {TestForm} from './compontents/forms/index';
+import { HeroList } from './compontents/heros/hero-list';
 
 const routes:Routes = [
   {
@@ -17,6 +18,10 @@ const routes:Routes = [
   {
     path:'test-form',
     component:TestForm
+  },
+  {
+    path:'hero-list',
+    component:HeroList
   }
 ];
 

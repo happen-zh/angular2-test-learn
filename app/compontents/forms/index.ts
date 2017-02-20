@@ -8,6 +8,6 @@ import {Hero} from '../../hero';
 })
 
 export class TestForm{
-  powerList = ['yi','er','san','si','wu'];
+  powerList = ['','yi','er','san','si','wu'];
   model = new Hero(123,'happen','yi','testMsg');
 }

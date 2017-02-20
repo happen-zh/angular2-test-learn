@@ -10,6 +10,8 @@ export class AppComponent{
 
 }
 
+
+
 // 路由部分
 // @Component({
 //   selector:'my-app',
